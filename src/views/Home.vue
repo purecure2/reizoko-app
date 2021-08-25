@@ -1,20 +1,22 @@
 <template>
   <div class="home__wrapper">
-    <submit-form />
+    <div><ingredients /></div>
+    <div><dishes /></div>
   </div>
 </template>
 
 <script>
-import SubmitForm from "../components/SubmitForm.vue"
+import ingredients from "../components/ingredients.vue"
+import dishes from "../components/dishes.vue"
 export default {
-  components: { SubmitForm },
+  components: { ingredients, dishes },
 }
 </script>
 
 <style scoped>
 .home__wrapper {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 1200px;
   background-color: #ccc;
 }
 </style>
