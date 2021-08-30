@@ -1,6 +1,10 @@
 <template>
   <div class="form-wrapper">
-    <textarea class="form-textarea" v-model="text" placeholder="料理" />
+    <textarea
+      class="form-textarea"
+      v-model="text"
+      placeholder="冷蔵庫にある料理"
+    />
     <div class="form-buttons">
       <button v-on:click="post" class="form__submit-button">記録</button>
     </div>
@@ -8,6 +12,8 @@
 </template>
 
 <script>
+import firebase from "firebase"
+
 export default {
   data() {
     return {
@@ -16,7 +22,10 @@ export default {
   },
   methods: {
     post() {
-      alert("なにたべる？")
+      // alert("なにたべる？")
+      firebase.firestore().collection("dishes").add({
+        text: this.text,
+      })
     },
   },
 }

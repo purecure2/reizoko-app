@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import firebase from "firebase"
+
 export default {
   data() {
     return {
@@ -20,7 +22,10 @@ export default {
   },
   methods: {
     post() {
-      alert("なにたべる？")
+      // alert("なにたべる？")
+      firebase.firestore().collection("ingredients").add({
+        text: this.text,
+      })
     },
   },
 }
