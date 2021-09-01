@@ -5,7 +5,7 @@
       v-model="text"
       placeholder="冷蔵庫にある料理"
     />
-    <input type="date" id="date" />
+    <input type="date" v-model="date" id="date" />
     <div class="form-buttons">
       <button v-on:click="post" class="form__submit-button">記録</button>
     </div>
@@ -19,15 +19,26 @@ export default {
   data() {
     return {
       text: "",
-      //   date: "",
+      date: "",
     }
+  },
+  computed: {
+    user() {
+      return this.$auth.currentUser
+    },
   },
   methods: {
     post() {
       // alert("なにたべる？")
-      firebase.firestore().collection("users").doc("").add({
-        text: this.text,
-      })
+      firebase
+        .firestore()
+        .collection("users")
+        .doc(this.user.uid)
+        .collection("dishes")
+        .add({
+          text: this.text,
+          date: this.date,
+        })
     },
   },
 }

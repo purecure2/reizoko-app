@@ -1,13 +1,13 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <add />
+    <get />
   </div>
 </template>
 
 <script>
-import add from "../components/add.vue"
+import get from "../components/get.vue"
 export default {
-  components: { add },
+  components: { get },
 }
 </script>
