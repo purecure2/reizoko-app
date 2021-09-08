@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/BeforeSignIN">before singin page</router-link>
-      <router-link to="/AfterSignIN">after singin page</router-link>
-      <router-link to="/">Home</router-link> |
+      <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <router-link to="/my-page">Mypage</router-link>
     </div>
     <router-view />
-    <div v-if="isLoggin">ログインしてます</div>
-    <div v-else>ログアウトしてます</div>
+    <div v-if="isLoggin">ログイン中</div>
+    <div v-else>ログアウトしました</div>
     <div v-on:click="login">ログインするボタン</div>
     <div v-on:click="logOut">ログアウトするボタン</div>
   </div>
