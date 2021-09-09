@@ -21,7 +21,6 @@ const routes = [
     path: "/my-page",
     name: "MyPage",
     component: Mypage,
-    
   },
   {
     path: "/about",
@@ -39,7 +38,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
-
 
 const isSignedIn = async () => {
   // Promise を使って、onAuthStateChanged が完了するまで待つ

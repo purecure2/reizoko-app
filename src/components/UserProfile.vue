@@ -13,8 +13,8 @@ export default {
       return this.$auth.currentUser
     },
   },
-  methods:{
-    async addf(){
+  methods: {
+    async addf() {
       console.log("uid:", this.user.uid),
         await firebase.firestore().collection("users").doc(this.user.uid).set({
           name: this.user.displayName,
