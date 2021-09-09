@@ -1,7 +1,9 @@
 <template>
   <div>
     {{ user.displayName }}
-    <div v-on:click="addf">冷蔵庫を作る</div>
+    <div>
+      <button v-on:click="addf">冷蔵庫を作る</button>
+    </div>
   </div>
 </template>
 
@@ -13,8 +15,8 @@ export default {
       return this.$auth.currentUser
     },
   },
-  methods:{
-    async addf(){
+  methods: {
+    async addf() {
       console.log("uid:", this.user.uid),
         await firebase.firestore().collection("users").doc(this.user.uid).set({
           name: this.user.displayName,
