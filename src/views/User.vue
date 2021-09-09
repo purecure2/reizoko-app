@@ -1,23 +1,21 @@
 <template>
- <div class="tabs">
-  <input id="all" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="all">材料</label>
-  <input id="programming" type="radio" name="tab_item">
-  <label class="tab_item" for="programming">料理</label>
-  <div class="tab_content" id="all_content">
-    <div class="tab_content_description">
-      <p class="c-txtsp">総合の内容がここに入ります</p>
+  <div class="tabs">
+    <input id="all" type="radio" name="tab_item" checked />
+    <label class="tab_item" for="all">材料</label>
+    <input id="programming" type="radio" name="tab_item" />
+    <label class="tab_item" for="programming">料理</label>
+    <div class="tab_content" id="all_content">
+      <div class="tab_content_description">
+        <p class="c-txtsp">総合の内容がここに入ります</p>
+      </div>
+    </div>
+    <div class="tab_content" id="programming_content">
+      <div class="tab_content_description">
+        <p class="c-txtsp">プログラミングの内容がここに入ります</p>
+      </div>
     </div>
   </div>
-  <div class="tab_content" id="programming_content">
-    <div class="tab_content_description">
-      <p class="c-txtsp">プログラミングの内容がここに入ります</p>
-    </div>
-  </div>
-</div>
 </template>
-
-
 
 <style>
 .tabs {
@@ -26,11 +24,12 @@
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 700px;
-  margin: 0 auto;}
+  margin: 0 auto;
+}
 
 /*タブのスタイル*/
 .tab_item {
-  width: calc(100%/2);
+  width: calc(100% / 2);
   height: 50px;
   border-bottom: 3px solid #5ab4bd;
   background-color: #d9d9d9;
@@ -60,7 +59,6 @@ input[name="tab_item"] {
   clear: both;
   overflow: hidden;
 }
-
 
 /*選択されているタブのコンテンツのみを表示*/
 #all:checked ~ #all_content,
