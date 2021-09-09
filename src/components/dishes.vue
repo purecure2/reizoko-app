@@ -39,6 +39,9 @@ export default {
           text: this.text,
           date: this.date,
         })
+      alert("投稿したで")
+      this.text = ""
+      this.date = ""
     },
   },
 }
