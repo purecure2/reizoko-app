@@ -9,8 +9,8 @@
     <div v-if="isLoggin">ログイン中</div>
     <div v-else>ログアウトしました</div>
     <div></div>
-    <button v-if="isLoggin" v-on:click="logOut">LOGOUT!</button>
-    <button v-else v-on:click="login">LOGIN!</button>
+    <button v-if="isLoggin" v-on:click="logOut">ログアウト♡</button>
+    <button v-else v-on:click="login">ログイン♡</button>
   </div>
 </template>
 
