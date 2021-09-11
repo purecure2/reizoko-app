@@ -6,6 +6,7 @@
     <label class="tab_item" for="programming">材料</label>
     <div class="tab_content" id="all_content">
       <div class="tab_content_description">
+        <input type="checkbox" v-model="todo.isDone" />
         <div v-for="dish in dishes" :key="dish" class="c-txtsp">
           料理名：{{ dish.text }}消費期限：{{ dish.date }}
         </div>
@@ -13,8 +14,12 @@
     </div>
     <div class="tab_content" id="programming_content">
       <div class="tab_content_description">
-        <div v-for="ing in ings" :key="ing" class="c-txtsp">
-          材料名：{{ ing.text }}消費期限：{{ ing.date }}
+        <div
+          v-for="ingredient in ingredients"
+          :key="ingredient"
+          class="c-txtsp"
+        >
+          材料名：{{ ingredient.text }}消費期限：{{ ingredient.date }}
         </div>
       </div>
     </div>
@@ -37,8 +42,8 @@ export default {
   data() {
     return {
       userId: "",
-      dishes: [{ date: "", text: "" }],
-      ings: [{ date: "", text: "" }],
+      dishes: [{ date: "", text: ""}]
+      ingredients: [{ date: "", text: ""}],
     }
   },
   //ここにfirebase AuthからユーザーIDを取得してthis.userIDに代入する文を書く
@@ -69,11 +74,11 @@ export default {
       .firestore()
       .collection("users")
       .doc(this.userId)
-      .collection("ing")
+      .collection("ingredients")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
-          this.ing.push({
+          this.ingredients.push({
             id: doc.id,
             ...doc.data(),
           })
