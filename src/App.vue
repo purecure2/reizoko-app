@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/home">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <router-link to="/my-page">Mypage</router-link>
+    <div class="hearder shadow">
+      <div class="logo">Refcon</div>
+      <div id="nav">
+        <router-link to="/home" class="hearder_part">Home</router-link> |
+        <router-link to="/about" class="hearder_part">About</router-link>|
+        <router-link to="/my-page " class="hearder_part">Mypage</router-link>
+      </div>
     </div>
     <router-view />
-    <div v-if="isLoggin">ログイン中</div>
-    <div v-else>ログアウトしました</div>
-    <div v-on:click="login">ログインするボタン</div>
-    <div v-on:click="logOut">ログアウトするボタン</div>
+    <div></div>
+    <button v-if="isLoggin" v-on:click="logOut">ログアウト♡</button>
+    <button v-else v-on:click="login">ログイン♡</button>
   </div>
+  
 </template>
 
 <script>
@@ -48,6 +51,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,900&display=swap');
+
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -66,6 +73,28 @@ export default {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #01579b;
+}
+.hearder {
+  height: 85px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 50px;
+}
+
+.shadow {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
+}
+
+.hearder_part {
+  color: white;
+  font-size: 20px;
+}
+
+.logo{
+  font-size: 55px;
+  color: #1976D2;
+  font-family: 'Exo', sans-serif;
+  margin-right: 300px;
 }
 </style>
