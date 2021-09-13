@@ -6,9 +6,10 @@
     <label class="tab_item" for="programming">材料</label>
     <div class="tab_content" id="all_content">
       <div class="tab_content_description">
-        <input type="checkbox" v-model="todo.isDone" />
+        <h2>削除したら更新しなあかん</h2>
         <div v-for="dish in dishes" :key="dish" class="c-txtsp">
-          料理名：{{ dish.text }}消費期限：{{ dish.date }}
+          料理名：{{ dish.text }} 消費期限：{{ dish.date }}
+          <button v-on:click="test(dish.text)">削除</button>
         </div>
       </div>
     </div>
@@ -19,7 +20,8 @@
           :key="ingredient"
           class="c-txtsp"
         >
-          材料名：{{ ingredient.text }}消費期限：{{ ingredient.date }}
+          材料名：{{ ingredient.text }} 消費期限：{{ ingredient.date }}
+          <button v-on:click="test2(ingredient.text)">削除</button>
         </div>
       </div>
     </div>
@@ -42,14 +44,62 @@ export default {
   data() {
     return {
       userId: "",
-      dishes: [{ date: "", text: ""}]
-      ingredients: [{ date: "", text: ""}],
+      ddoc: "",
+      ddoc2: "",
+      dishes: [{ date: "", text: "" }],
+      ingredients: [{ date: "", text: "" }],
     }
   },
   //ここにfirebase AuthからユーザーIDを取得してthis.userIDに代入する文を書く
   computed: {
     user() {
       return this.$auth.currentUser
+    },
+  },
+  methods: {
+    async test(value) {
+      const index = this.dishes.indexOf(value)
+      this.dishes.splice(index, 1)
+      const db = firebase.firestore()
+      await db
+        .collection("users")
+        .doc(this.userId)
+        .collection("dishes")
+        .where("text", "==", value)
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            this.ddoc = doc.id
+          })
+        })
+      await db
+        .collection("users")
+        .doc(this.userId)
+        .collection("dishes")
+        .doc(this.ddoc)
+        .delete()
+    },
+    async test2(value) {
+      const index = this.ingredients.indexOf(value)
+      this.ingredients.splice(index, 1)
+      const db = firebase.firestore()
+      await db
+        .collection("users")
+        .doc(this.userId)
+        .collection("ingredients")
+        .where("text", "==", value)
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            this.ddoc2 = doc.id
+          })
+        })
+      await db
+        .collection("users")
+        .doc(this.userId)
+        .collection("ingredients")
+        .doc(this.ddoc2)
+        .delete()
     },
   },
   async created() {
@@ -87,6 +137,7 @@ export default {
   },
 }
 </script>
+
 <style>
 .tabs {
   margin-top: 50px;
