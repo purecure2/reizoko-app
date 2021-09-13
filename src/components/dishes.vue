@@ -22,7 +22,6 @@
 
 <script>
 import firebase from "firebase"
-
 export default {
   data() {
     return {
@@ -37,7 +36,6 @@ export default {
   },
   methods: {
     post() {
-      // alert("なにたべる？")
       firebase
         .firestore()
         .collection("users")
