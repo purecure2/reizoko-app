@@ -2,11 +2,11 @@
   <div class="home__wrapper">
     <div class="title">
       <div class="title_box">
-        <p class="title_left">ingredients</p>
+        <p class="title_left">Ingredients</p>
         <div class="line_1"></div>
       </div>
       <div class="title_box">
-        <p class="title_right">dishes</p>
+        <p class="title_right">Dishes</p>
         <div class="line_2"></div>
       </div>
     </div>

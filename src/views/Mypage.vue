@@ -24,9 +24,14 @@
       </div>
     </div>
     <div class="part">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
+      <div class="circle">
+        <img class="img-wrap" src="../assets/004.png" width="100px" />
+        <div class="name">Ingredients</div>
+      </div>
+      <div class="circle">
+        <img class="img-wrap" src="../assets/006.png" width="100px" />
+        <div class="name">Dishes</div>
+      </div>
     </div>
 
 
@@ -35,6 +40,7 @@
 </template>
 
 <script>
+
 import UserProfile from "../components/UserProfile.vue"
 
 export default {
@@ -163,7 +169,8 @@ export default {
   margin: 80px 0;
   display: flex;
   justify-content: space-around;
-  padding-top: 130px;
+  padding: 130px 130px 0 130px;
+
 }
 
 .circle{
@@ -174,5 +181,12 @@ export default {
   border-radius: 50%;
   color: #1976D2;
   text-align: center;
+  
+}
+
+.name{
+  margin-top: -150px; 
+  font-size: 28px;
+  font-family: 'Exo', sans-serif;
 }
 </style>

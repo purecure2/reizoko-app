@@ -3,9 +3,9 @@
     <div class="hearder shadow">
       <div class="logo">Refcon</div>
       <div id="nav">
-        <router-link to="/home" class="hearder_part">Home</router-link> |
-        <router-link to="/about" class="hearder_part">About</router-link>|
-        <router-link to="/my-page " class="hearder_part">Mypage</router-link>
+        <router-link to="/home" class="hearder_part">Memo</router-link> |
+        <router-link to="/about" class="hearder_part">List</router-link>|
+        <router-link to="/my-page " class="hearder_part">Home</router-link>
       </div>
     </div>
     <router-view />
