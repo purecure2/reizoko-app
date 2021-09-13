@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="tab_content" id="programming_content">
+    <div class="tab_content" id="programming_contennot">
       <div class="tab_content_description">
         <div
           v-for="ingredient in ingredients"

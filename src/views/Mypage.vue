@@ -47,6 +47,7 @@ export default {
   components: {
     UserProfile,
   },
+
 }
 </script>
 <style scoped>

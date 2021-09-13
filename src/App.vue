@@ -6,12 +6,12 @@
         <router-link to="/home" class="hearder_part">Memo</router-link> |
         <router-link to="/about" class="hearder_part">List</router-link>|
         <router-link to="/my-page " class="hearder_part">Home</router-link>
+        <button v-if="isLoggin" v-on:click="logOut">ログアウト♡</button>
+        <button v-else v-on:click="login">ログイン♡</button>
       </div>
     </div>
     <router-view />
     <div></div>
-    <button v-if="isLoggin" v-on:click="logOut">ログアウト♡</button>
-    <button v-else v-on:click="login">ログイン♡</button>
   </div>
   
 </template>
