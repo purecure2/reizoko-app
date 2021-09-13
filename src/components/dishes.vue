@@ -5,12 +5,20 @@
       v-model="text"
       placeholder="冷蔵庫にある料理"
     />
+    <div class="line_1"></div>
+    <div class="line_2"></div>
+    <div class="date_form">
     <input type="date" v-model="date" id="date" />
+    </div>
+    <div class="line_3"></div>
+    <div class="line_2"></div>
     <div class="form-buttons">
-      <button v-on:click="post" class="form__submit-button">記録</button>
+      <button v-on:click="post" class="btn btn-inside btn-boarder"><img src="https://i.cloudup.com/gBzAn-oW_S-2000x2000.png" width="64px" height="64px" ></button>
     </div>
   </div>
+  
 </template>
+
 
 <script>
 import firebase from "firebase"
@@ -43,26 +51,96 @@ export default {
     },
   },
 }
+
 </script>
 
 <style scoped>
-.form__wrapper {
-  padding: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+.line_1{
+  border-bottom: 2px solid white;
+  margin-left: 67px;
+  width: 335px;
+  margin-top: 200px;
 }
-.form__textarea {
-  width: 100%;
-  height: 50px;
-  padding: 0.3rem;
-  line-height: 1.3rem;
-  border-radius: 5px;
+
+.line_2{
+  border-bottom: 2px solid white;
+  margin-left: 67px;
+  width: 335px;
+  margin-top: 66px;
+}
+.line_3{
+  border-bottom: 2px solid white;
+  margin-left: 67px;
+  width: 335px;
+
+}
+.form-textarea{
+  margin-bottom: -200px;
+  margin-left: -180px;
+
+}
+
+.date_form{
+  margin-top:50px;
+  margin-left: -200px;
+}
+
+
+.btn {
+  margin-top: 70px;
+  width: 100px;
+  height: 100px;
   border: none;
-  resize: none;
-}
-.form__textarea:focus {
+  color: inherit;
+  background: none;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
   outline: none;
 }
-.form__buttons {
-  display: flex;
-  justify-content: flex-end;
+
+.btn img{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
+
+.btn:after {
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.bg {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.btn-boarder {
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.btn:hover {
+ background-color:rgba(255,255,255,0.4);
+}
+
+.form-wrapper{
+ font-family: 'Noto Sans JP', sans-serif;
+}
+ 
+
 </style>

@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="tab_content" id="programming_content">
+    <div class="tab_content" id="programming_contennot">
       <div class="tab_content_description">
         <div
           v-for="ingredient in ingredients"
@@ -140,25 +140,30 @@ export default {
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 .tabs {
+  
   margin-top: 50px;
   padding-bottom: 40px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 700px;
   margin: 0 auto;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 /*タブのスタイル*/
 .tab_item {
   width: calc(100% / 2);
-  height: 50px;
-  border-bottom: 3px solid #5ab4bd;
+  height: 80px;
+  border-bottom: 3px solid #01579b;
   background-color: #d9d9d9;
-  line-height: 50px;
+  line-height: 80px;
   font-size: 16px;
   text-align: center;
-  color: #565656;
+  color: #01579b;
   display: block;
   float: left;
   text-align: center;
@@ -191,7 +196,14 @@ input[name="tab_item"] {
 
 /*選択されているタブのスタイルを変える*/
 .tabs input:checked + .tab_item {
-  background-color: #5ab4bd;
+  background-color: #01579b;
   color: #fff;
 }
+
+.tab_content_description{
+  text-align: left; 
+
+}
+
+
 </style>

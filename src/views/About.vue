@@ -1,5 +1,7 @@
 <template>
-  <get />
+  <div class="top">
+    <get />
+  </div>
 </template>
 
 <script>
@@ -11,3 +13,10 @@ export default {
   },
 }
 </script>
+<style scoped>
+.top {
+  padding-top: 70px;
+  font-family: "Noto Sans JP"; 
+
+}
+</style>
