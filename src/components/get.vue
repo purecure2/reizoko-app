@@ -6,8 +6,7 @@
     <label class="tab_item" for="programming">材料</label>
     <div class="tab_content" id="all_content">
       <div class="tab_content_description">
-        <h2>削除したら更新しなあかん</h2>
-        <div v-for="dish in dishes" :key="dish" class="c-txtsp">
+        <div v-for="dish in dishes" :key="dish.name" class="c-txtsp">
           料理名：{{ dish.text }} 消費期限：{{ dish.date }}
           <button v-on:click="test(dish.text)">削除</button>
         </div>
@@ -78,6 +77,7 @@ export default {
         .collection("dishes")
         .doc(this.ddoc)
         .delete()
+      window.location.reload()
     },
     async test2(value) {
       const index = this.ingredients.indexOf(value)
@@ -100,6 +100,7 @@ export default {
         .collection("ingredients")
         .doc(this.ddoc2)
         .delete()
+      window.location.reload()
     },
   },
   async created() {
